@@ -40,19 +40,16 @@ sudo chmod 700 /var/log/monitor_state
 mkdir backup
 mkdir repo archieves
 
-
-## **3. Initialize Git Backup Repository**  
+**. Initialize Git Backup Repository**  
 ```bash
 cd /backups/repo
 git init
 git config --global user.email "backup@localhost"
 git config --global user.name "Backup Bot"
 ```
-
-
 ---
 
-## **5. Enhanced Backup Script**
+## **3. Enhanced Backup Script**
 
 touch /usr/local/bin/system_backup.sh
 
