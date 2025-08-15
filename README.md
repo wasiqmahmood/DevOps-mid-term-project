@@ -35,9 +35,27 @@ sudo mkdir -p /var/log/monitor_state
 sudo chmod 700 /var/log/monitor_state  
 ```
 
+## **2. Initialize archives and repo Repository**  
+```bash
+mkdir backup
+mkdir repo archieves
+
+
+## **3. Initialize Git Backup Repository**  
+```bash
+cd /backups/repo
+git init
+git config --global user.email "backup@localhost"
+git config --global user.name "Backup Bot"
+```
+
+
 ---
 
-## **2. Enhanced Backup Script**  
+## **5. Enhanced Backup Script**
+
+touch /usr/local/bin/system_backup.sh
+
 **File:** `/usr/local/bin/system_backup.sh`  
 ```bash
 #!/bin/bash
@@ -155,7 +173,10 @@ sudo chown root:root /usr/local/bin/system_backup.sh
 
 ---
 
-## **3. Enhanced Log Monitor**  
+## **6. Enhanced Log Monitor**  
+
+touch /usr/local/bin/log_monitor.sh
+
 **File:** `/usr/local/bin/log_monitor.sh`  
 ```bash
 #!/bin/bash
@@ -270,7 +291,7 @@ sudo chown root:root /usr/local/bin/log_monitor.sh
 
 ---
 
-## **4. Supporting Configuration Files**  
+## **7. Supporting Configuration Files**  
 
 ### **A. Environment Variables**  
 **File:** `/etc/profile.d/backup_env.sh`  
@@ -320,7 +341,7 @@ sudo chown root:root /etc/profile.d/backup_env.sh
 
 ---
 
-## **5. Security Hardening**  
+## **9. Security Hardening**  
 
 ### **Directory Protection**  
 ```bash
@@ -344,7 +365,7 @@ sudo systemctl restart apparmor
 
 ---
 
-## **6. Verification & Testing**  
+## **10. Verification & Testing**  
 
 ### **Backup System Test**  
 ```bash
@@ -376,7 +397,7 @@ ls -l /var/log/monitor_state/
 
 ---
 
-## **7. Maintenance & Monitoring**  
+## **11. Maintenance & Monitoring**  
 
 ### **Daily Checks**  
 ```bash
