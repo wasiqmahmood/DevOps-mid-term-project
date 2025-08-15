@@ -68,23 +68,25 @@ RETENTION_DAYS=30
 MIN_DISK_SPACE=1048576  # 1GB in KB
 ADMIN_EMAIL=$(source /etc/profile.d/backup_env.sh; echo $ADMIN_EMAIL)
 
+# --- Initialize Logging ---  [NEW SECTION ADDED HERE]
+LOG_DIR="/var/log/backups"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/backup_$(date +%Y%m%d-%H%M%S).log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+echo "[$(date)] Starting backup operation"  # Initial log entry
+
 # --- Initialize ---
 TIMESTAMP=$(date +%Y%m%d-%H%M%S)
 BACKUP_FILE="$BACKUP_DIR/backup-$TIMESTAMP.tar.gz"
-LOG_FILE="/var/log/backup_$TIMESTAMP.log"
-
-# Initialize log
-echo "[$(date)] Starting backup operation" > "$LOG_FILE"
 
 # --- Validation Checks ---
 check_disk_space() {
   local available=$(df -k --output=avail "$BACKUP_DIR" | tail -1)
   if [ "$available" -lt $MIN_DISK_SPACE ]; then
-    echo "ERROR: Insufficient disk space (only ${available}KB available)" | tee -a "$LOG_FILE"
+    echo "ERROR: Insufficient disk space (only ${available}KB available)"
     return 1
   fi
 }
-
 validate_directories() {
   for dir in "${DIRS_TO_BACKUP[@]}"; do
     if [ ! -d "$dir" ]; then
