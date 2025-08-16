@@ -184,7 +184,7 @@ touch /usr/local/bin/log_monitor.sh
 # =============================================================================
 
 # --- Configuration ---
-LOG_FILES=("/var/log/syslog" "/var/log/auth.log")
+LOG_FILES=("/var/log/monitor_state/syslog" "/var/log/monitor_state/auth.log")
 KEYWORDS=("error" "failed" "critical" "denied" "unauthorized")
 STATE_DIR="/var/log/monitor_state"
 ALERT_EMAIL=$(source /etc/profile.d/backup_env.sh; echo $ALERT_EMAIL)
