@@ -386,17 +386,6 @@ sudo chmod 700 /backups /backups/archives /var/log/monitor_state
 sudo chmod 600 /etc/profile.d/backup_env.sh
 ```
 
-### **SELinux/AppArmor Configuration**  
-```bash
-# For SELinux systems:
-sudo semanage fcontext -a -t backup_t "/backups(/.*)?"
-sudo restorecon -Rv /backups
-
-# For AppArmor:
-echo "/backups/** rwk," | sudo tee -a /etc/apparmor.d/local/usr.sbin.cron
-sudo systemctl restart apparmor
-```
-
 ---
 
 ## **10. Verification & Testing**  
