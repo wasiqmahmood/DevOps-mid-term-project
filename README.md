@@ -417,28 +417,6 @@ tail -f /var/log/monitor.log
 # Check state files
 ls -l /var/log/monitor_state/
 ```
-
----
-
-## **11. Maintenance & Monitoring**  
-
-### **Daily Checks**  
-```bash
-# Check backup status
-grep -i "SUCCESS" /var/log/backup_*.log
-
-# Verify cron execution
-journalctl -t CRON | grep "system_backup\|log_monitor"
-```
-
-### **Monthly Verification**  
-```bash
-# Test restore from oldest backup
-OLDEST=$(ls -t /backups/archives/*.tar.gz | tail -1)
-mkdir -p /tmp/restore-test
-tar -tzf "$OLDEST" > /dev/null && echo "Backup integrity verified"
-```
-
 ---
 
 ## **Summary of Enhancements**  
