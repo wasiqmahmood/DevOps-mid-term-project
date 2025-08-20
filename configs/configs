@@ -1,0 +1,14 @@
+# ENHANCED LOG ROTATION CONFIG
+/var/log/backup/backup_*.*.log /var/log/monitor.log {
+    su root syslog
+    weekly
+    rotate 8
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 640 root adm
+    postrotate
+        /usr/bin/systemctl restart rsyslog >/dev/null 2>&1 || true
+    endscript
+}
