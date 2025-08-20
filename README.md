@@ -364,7 +364,7 @@ sudo chown root:root /etc/profile.d/backup_env.sh
 **Root crontab (`sudo crontab -e`):**  
 ```bash
 # DAILY BACKUP (2:00 AM)
-0 2 * * * /usr/local/bin/system_backup.sh
+55 1 * * * /usr/local/bin/system_backup.sh
 
 # LOG MONITORING (EVERY 5 MINUTES)
 */5 * * * * /usr/local/bin/log_monitor.sh
