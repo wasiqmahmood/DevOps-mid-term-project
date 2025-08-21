@@ -439,7 +439,7 @@ drwxr-xr-x 8 root  root    4096 Aug 21 02:10 .git
 -rw-r--r-- 1 root  root  525647 Aug 20 01:55 backup-20250820-015503.tar.gz
 -rw-r--r-- 1 root  root  525643 Aug 21 02:00 backup-20250821-020001.tar.gz
 -rw-r--r-- 1 root  root  525641 Aug 21 02:10 backup-20250821-021050.tar.gz
-root@Wasiq-LJVR1VH:/backups/repo#```
+```
 ---
 
 ## **Summary of Enhancements**  
