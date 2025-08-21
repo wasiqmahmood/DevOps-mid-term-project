@@ -419,6 +419,29 @@ ls -l /var/log/monitor_state/
 ```
 ---
 
+### **Backup Created**  
+```bash
+/backups/archives/:
+total 2072
+drwx------ 2 root root   4096 Aug 21 03:38 .
+drwx------ 4 root root   4096 Aug 16 08:50 ..
+-rw-r--r-- 1 root root 525720 Aug 18 01:55 backup-20250818-015504.tar.gz
+-rw-r--r-- 1 root root 525647 Aug 20 01:55 backup-20250820-015503.tar.gz
+-rw-r--r-- 1 root root 525643 Aug 21 02:00 backup-20250821-020001.tar.gz
+-rw-r--r-- 1 root root 525641 Aug 21 02:10 backup-20250821-021050.tar.gz
+
+/backups/repo/:
+total 2076
+drwx------ 3 wasiq wasiq   4096 Aug 21 03:38 .
+drwx------ 4 root  root    4096 Aug 16 08:50 ..
+drwxr-xr-x 8 root  root    4096 Aug 21 02:10 .git
+-rw-r--r-- 1 root  root  525720 Aug 18 01:55 backup-20250818-015504.tar.gz
+-rw-r--r-- 1 root  root  525647 Aug 20 01:55 backup-20250820-015503.tar.gz
+-rw-r--r-- 1 root  root  525643 Aug 21 02:00 backup-20250821-020001.tar.gz
+-rw-r--r-- 1 root  root  525641 Aug 21 02:10 backup-20250821-021050.tar.gz
+root@Wasiq-LJVR1VH:/backups/repo#```
+---
+
 ## **Summary of Enhancements**  
 | **Area**          | **Improvements** |
 |-------------------|------------------|
