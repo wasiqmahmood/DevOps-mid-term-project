@@ -163,6 +163,8 @@ apply_retention() {
   exit 1
 }```
 
+```
+
 **Permissions:**  
 ```bash
 sudo chmod 700 /usr/local/bin/system_backup.sh
